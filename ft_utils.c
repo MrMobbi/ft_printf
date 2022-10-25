@@ -6,7 +6,7 @@
 /*   By: mjulliat <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:37:05 by mjulliat          #+#    #+#             */
-/*   Updated: 2022/10/25 19:08:39 by mjulliat         ###   ########.fr       */
+/*   Updated: 2022/10/25 20:49:57 by mjulliat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,21 @@ int	ft_putnbr(int n)
 		count += ft_putchar(n + '0');
 	if (neg == 1)
 		count += 1;
+	return (count);
+}
+
+unsigned int	ft_put_unsinbr(unsigned int n)
+{
+	static int	count;
+
+	count = 0;
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		n = n % 10;
+	}
+	if (n < 10)
+		count += ft_putchar(n + '0');
 	return (count);
 }
 

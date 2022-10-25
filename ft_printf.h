@@ -6,7 +6,7 @@
 /*   By: mjulliat <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:36:53 by mjulliat          #+#    #+#             */
-/*   Updated: 2022/10/25 19:04:52 by mjulliat         ###   ########.fr       */
+/*   Updated: 2022/10/25 20:47:35 by mjulliat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-char	*ft_calloc(size_t size, size_t nbyte);
+char			*ft_calloc(size_t size, size_t nbyte);
 
-int		ft_putchar(char c);
-int		ft_sort(va_list args, char c);
-int		ft_putnbr(int n);
-int		ft_putstr(char *str);
+int				ft_putchar(char c);
+int				ft_sort(va_list args, char c);
+int				ft_putnbr(int n);
+int				ft_putstr(char *str);
+unsigned int	ft_put_unsinbr(unsigned int n);
 
 #endif
