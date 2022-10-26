@@ -1,13 +1,14 @@
 
+MAIN		= main.c
 OBJS		= ${SRCS:.c=.o}
 NAME		= libftprintf.a
 CC			= gcc
 FLAGS		= -Wall -Werror -Wextra
-RM			= rm -f
+RM			= rm -Rf
 LIB			= ar rc
 INC			= includes
-A_OUT		= a.out
-SRCS		= ft_printf.c ft_utils.c ft_sort.c
+A_OUT		= a.out a.out.dSYM
+SRCS		= ft_printf.c ft_utils.c ft_sort.c ft_hexa.c
 
 .c.o:		${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I ${INC}
 
@@ -17,7 +18,7 @@ ${NAME}:	${OBJS}
 			${LIB} ${NAME} ${OBJS}
 
 clean:
-			${RM} ${OBJS} ${A_OUT}
+			${RM} ${OBJS} ${A_OUT} ft_printf.h.gch
 
 fclean:		clean
 			${RM} ${NAME}
@@ -25,7 +26,7 @@ fclean:		clean
 re:			fclean all
 
 run:		all
-			${CC} ${FLAGS} ft_printf.c -L. -lftprintf
+			${CC} -g ${FLAGS} ${MAIN} ft_printf.c -L. -lftprintf
 			./${A_OUT}
 
 .PHONY:		all clean flcean re
